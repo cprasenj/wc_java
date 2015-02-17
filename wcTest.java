@@ -25,4 +25,12 @@ public class wcTest{
 		wc wC = new wc(text);
 		assertEquals(wC.lineCount(),2);
 	}
+
+	@Test
+	public void wcBasicResult_001() {
+		console.log("Gives 2 10 47 for the given string");
+		String text = "hello, this is a good day.\n What do you think?",result = "2 10 46";
+		wc wC = new wc(text);
+		assertEquals(wC.wcBasicResult(),result);
+	}
 }

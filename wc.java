@@ -23,4 +23,8 @@ public class wc{
 	public int lineCount() {
 		return occurenceOfChar('\n') + 1;
 	}
+
+	public String wcBasicResult() {
+		return Integer.toString(lineCount())+ " " +Integer.toString(wordCount())+ " " +Integer.toString(charCount());
+	}	
 }
