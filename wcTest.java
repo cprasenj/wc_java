@@ -35,6 +35,30 @@ public class wcTest{
 	}
 
 	@Test
+	public void wordCount_004() {
+		console.log("Gives 0 for the given string");
+		String text = "",result = "0";
+		wc wC = new wc(text,"-w");
+		assertEquals(wC.wcOutput(),result);
+	}
+
+	@Test
+	public void wordCount_005() {
+		console.log("Gives 1 for the given string");
+		String text = "word",result = "1";
+		wc wC = new wc(text,"-w");
+		assertEquals(wC.wcOutput(),result);
+	}
+
+	@Test
+	public void wordCount_006() {
+		console.log("Gives 2 for the given string");
+		String text = "hello                                                     word",result = "2";
+		wc wC = new wc(text,"-w");
+		assertEquals(wC.wcOutput(),result);
+	}
+
+	@Test
 	public void lineCount_003() {
 		console.log("Gives 48 for the given string");
 		String text = "hello, this is a good day.\r\nWhat do you think?\r\n",result = "26 hello, this is a good day";

@@ -18,7 +18,7 @@ public class wc{
 	}
 
 	private int wordCount() {
-		return expression.trim().split("\\s+").length;
+		return expression == "" ? 0 : expression.trim().split("\\s+").length;
 	}
 
 	private int lineCount() {
