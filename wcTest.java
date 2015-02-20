@@ -59,6 +59,14 @@ public class wcTest{
 	}
 
 	@Test
+	public void wordCount_007() {
+		console.log("Gives 2 for the given string");
+		String text = "hello      how  are you.            word",result = "5";
+		wc wC = new wc(text,"-w");
+		assertEquals(wC.wcOutput(),result);
+	}
+
+	@Test
 	public void lineCount_003() {
 		console.log("Gives 48 for the given string");
 		String text = "hello, this is a good day.\r\nWhat do you think?\r\n",result = "26 hello, this is a good day";
