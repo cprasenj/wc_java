@@ -1,8 +1,12 @@
 public class Word {
-	public String word;
-	public int length;
-	public Word(String word) {
-		this.word = word;
-		this.length = word.length();
+	private String content;
+
+	public Word(String text) {
+		this.content = text;
 	}
+
+	public int count() {
+		return content == "" ? 0 : content.trim().split("\\s+").length;
+	}
+
 }

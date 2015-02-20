@@ -3,16 +3,26 @@ import static org.junit.Assert.*;
 
 public class WordTest {
 	@Test
-	public void wordHoldsTheWordAndTheLengthOfTheWord_001() {
+	public void wordHoldsTheWordAndTheLengthOfTheText_001() {
 		Word word = new Word("Hello");
-		assertEquals(word.word,"Hello");
-		assertEquals(word.length,5);
+		assertEquals(word.count(),1);
 	}
 
 	@Test
-	public void wordHoldsTheWordAndTheLengthOfTheWord_002() {
-		Word word = new Word("     ");
-		assertEquals(word.word,"     ");
-		assertEquals(word.length,5);
+	public void wordHoldsTheWordAndTheLengthOfTheText_002() {
+		Word word = new Word("     r");
+		assertEquals(word.count(),1);
+	}
+
+	@Test
+	public void wordHoldsTheWordAndTheLengthOfTheText_003() {
+		Word word = new Word("     thought Works");
+		assertEquals(word.count(),2);
+	}
+
+	@Test
+	public void wordHoldsTheWordAndTheLengthOfTheText_004() {
+		Word word = new Word("     thought                                                              Works");
+		assertEquals(word.count(),2);
 	}
 }
