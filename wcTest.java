@@ -42,11 +42,11 @@ public class wcTest{
 		assertEquals(wC.wcOutput(),result);
 	}
 
-	// @Test
-	// public void lineCount_004() {
-	// 	console.log("Gives 48 for the given string");
-	// 	String text = "hello, this is a good day.\r\nWhat do you think?\r\n",result = "18 What do you think?";
-	// 	wc wC = new wc(text,"-S");
-	// 	assertEquals(wC.wcOutput(),result);
-	// }
+	@Test
+	public void lineCount_004() {
+		console.log("Gives 48 for the given string");
+		String text = "hello, this is a good day.\r\nWhat do you think?\r\n",result = "18 What do you think?";
+		wc wC = new wc(text,"-S");
+		assertEquals(wC.wcOutput(),result);
+	}
 }

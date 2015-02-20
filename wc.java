@@ -42,30 +42,26 @@ public class wc{
 		return s;
 	}
 
-	// private sentence giveSmallLine() {
-	// 	sentence s = new sentence();
-	// 	int start = 0,end,limit = charCount();
-	// 	char[] tmp = expression.toCharArray();
-	// 	for (int i = 0;i<limit;i++) {
-	// 		if(tmp[i] == '.' || i == limit-1){
-	// 			end = i;
-	// 			// if(tmp[i] == '\r' || tmp[i] == '\n' && tmp[i-1] == '.' || tmp[i-1] == '\r')
-	// 				// start++;
-
-	// 			if(start == 0) {
-	// 				s.count = i+1;
-	//         		s.sentence = expression.substring(start,end);
-	//         		start = i+1;
-	// 			}
-	//         	if(s.count > (end - start)) {
-	//         		s.count = i+1;
-	//         		s.sentence = expression.substring(start,end);
-	//         		start = i+1;
-	//         	}
-	// 		}
- //        }
-	// 	return s;
-	// }
+	private sentence giveSmallLine() {
+		sentence s = new sentence();
+		int start = 0,end,limit = charCount();
+		char[] tmp = expression.toCharArray();
+		for (int i = 0;i<limit;i++) {
+			if((tmp[i] == '\r' && tmp[i-1] == '.') || (tmp[i] == '\n' && tmp[i-2] == '.')) 
+				start++;
+			if(tmp[i] == '.' || i == limit-1){
+				end = i;
+	        	if(start == 0 || s.count > (end - start)) {
+	        		if(tmp[i] == '\n')
+	        			end-=2;
+	        		s.sentence = expression.substring(start,end+1);
+	        		s.count = end+1-start;
+	        		start = end+1;
+	        	}
+			}
+        }
+		return s;
+	}
 
 
 	private void giveAproval() {
